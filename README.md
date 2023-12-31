@@ -13,7 +13,7 @@
     <img src="images/2187logo.png" alt="Logo" width="120" height="120">
   </a>
 
-  <h3 align="center">Dashboard to Monitor 0dte Option Selling Strategies</h3>
+  <h1 align="center">Dashboard to Monitor 0dte Option Selling Strategies</h1>
 
   <p align="center">
     3 Iron Condor Strategies. $10, $20, and $30 Wings.
