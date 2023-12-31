@@ -150,6 +150,13 @@ Deploy:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Design
+![wireframe_v1](https://github.com/2187Nick/IronCondorLiveDashboard/assets/75052782/cfc70b71-26bf-4608-a88c-6e9f76c58f27)
+
+![wireframe_v1_a](https://github.com/2187Nick/IronCondorLiveDashboard/assets/75052782/35741412-e6c3-463e-bd8a-76617385b0cd)
+
+
+### Wireframe
+
   ```bash
 
 
