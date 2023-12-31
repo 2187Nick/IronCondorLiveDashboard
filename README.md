@@ -2,10 +2,6 @@
 
 <a name="readme-top"></a>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -21,7 +17,7 @@
     <a href="https://github.com/2187Nick/IronCondorLiveDashboard"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://ironcondor.2187.io">View Condor Website</a>
+    <a href="https://condor.2187.io">View Condor Website</a>
     ·
     <a href="https://github.com/2187Nick/IronCondorLiveDashboard">Report Bug</a>
     ·
