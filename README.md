@@ -66,7 +66,7 @@
 ![IC_idea](https://github.com/2187Nick/IronCondorLiveDashboard/assets/75052782/4f2a385a-23a2-4bfe-af6d-f98730fee755)
 
 
-The goal with this project is to design, build, monitor and eventually go live with an automated strategy.
+### The goal with this project is to design, build, monitor and eventually go live with an automated strategy.
 
 Key Unknowns:
 * Can a strategy work without human intervention?
@@ -150,12 +150,25 @@ Deploy:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Design
+  ```bash
+
+
+  ```
 
 ## Prototype
+  ```bash
+
+  
+  ```
+
 
 ## Deploy
+  ```bash
 
-### Installation
+  
+  ```
+
+## Installation
 
 1. Clone the repo
    ```sh
@@ -169,14 +182,14 @@ Deploy:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+## Built With
 
 * [![Angular][Angular.io]][Angular-url]
 
 * 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Prerequisites
+## Prerequisites
 
 * npm
   ```sh
