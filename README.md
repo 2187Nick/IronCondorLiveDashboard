@@ -12,8 +12,7 @@
   <h1 align="center">Dashboard to Monitor 0dte Option Selling Strategies</h1>
 
   <p align="center">
-    3 Iron Condor Strategies. $10, $20, and $30 Wings.
-    <br />
+    <h3>3 Iron Condor Strategies. $10, $20, and $30 Wings.<h3>
     <a href="https://github.com/2187Nick/IronCondorLiveDashboard"><strong>Explore the docs »</strong></a>
     <br />
     <br />
