@@ -135,10 +135,13 @@ Prototype:
   - [ ] Build Front-End structure in Angular
   - [ ] Setup API to backend
   - [ ] Build database
+  - [ ] Build TDA API data retrieval in Python
 
 Deploy:
-  - [ ] Create subdomain on AWS
-  - [ ] Upload Front-End to S3 Bucket
+  - [X] Create subdomain on AWS
+  - [X] Upload Basic Front-end to S3 Bucket
+  - [ ] Upload Version 1 Front-End to S3 Bucket
+  - [ ] Host Python data retrieval script. (Where?. EC2 or local or?)
   - [ ] Backend API deploy to Deta
   - [ ] Deta database created
 
@@ -163,7 +166,10 @@ Version1:
 
 
 ## Deploy
+  ### Domain(With starter Front-End): [https://condor.2187.io](https://condor.2187.io)
+
   ```bash
+  
 
   
   ```
@@ -218,9 +224,9 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@2187Nick](https://twitter.com/2187Nick) - nick@2187.io
+  [@2187Nick](https://twitter.com/2187Nick) - nick@2187.io
 
-Project Link: [https://github.com/2187Nick/IronCondorLiveDashboard](https://github.com/2187Nick/IronCondorLiveDashboard)
+  [https://github.com/2187Nick/IronCondorLiveDashboard](https://github.com/2187Nick/IronCondorLiveDashboard)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
