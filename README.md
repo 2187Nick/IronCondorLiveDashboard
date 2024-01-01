@@ -128,7 +128,7 @@ Preparation:
   - [X] Fill out Roadmap
 
 Design:
-  - [ ] Create low-fidelity wireframe
+  - [X] Create low-fidelity wireframe
   - [X] Add basic logic of the strategy
 
 Prototype:
