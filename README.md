@@ -16,7 +16,7 @@
     <a href="https://github.com/2187Nick/IronCondorLiveDashboard"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://condor.2187.io">View Condor Website</a>
+    <a href="https://condor.2187.io">View Condor Website(In progress)</a>
     ·
     <a href="https://github.com/2187Nick/IronCondorLiveDashboard">Report Bug</a>
     ·
