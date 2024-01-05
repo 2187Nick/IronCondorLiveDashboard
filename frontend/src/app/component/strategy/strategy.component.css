@@ -1,0 +1,75 @@
+.condor-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .wing {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+} */
+
+.wing {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 10px;
+}
+
+.left-wing {
+    order: 1;
+    /* This will ensure left-wing is always on the left */
+}
+
+.right-wing {
+    order: 3;
+    /* This will ensure right-wing is always on the right */
+}
+
+.wing dl {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+  }
+  
+  .wing dt {
+    font-weight: bold;
+  }
+
+.body {
+    /* This makes the body (including the graph) wider than the wings */
+    flex: 2;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+    /* width: 80vw;  *//* 80% of the viewport width */
+    /* height: 33vh;  *//* 80% of the viewport height */
+    /* width: 30%;
+    height: 30%; */
+}
+
+.body .head {
+    /* Styling for the head, where the graph will be */
+    /* More styling as needed */
+}
+
+.wings-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .wings-table th, .wings-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .wings-table th {
+    background-color: #f8f8f8;
+  }
