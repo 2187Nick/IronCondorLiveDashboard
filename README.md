@@ -124,7 +124,7 @@ Key Unknowns:
 ### Road Map
 
 Preparation:
-  - [X] Create Repo with README
+  - [X] Create Repo with README (Jan 1)
   - [X] Fill out Roadmap
 
 Design:
@@ -142,8 +142,8 @@ Deploy:
   - [X] Upload Basic Front-end to S3 Bucket
   - [ ] Upload Version 1 Front-End to S3 Bucket
   - [ ] Host Python data retrieval script. (Where?. EC2 or local or?)
-  - [ ] Backend API deploy to Deta
-  - [ ] Deta database created
+  - [X] Backend API deploy to Deta (Jan 4)
+  - [X] Deta database created (Jan 4)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
