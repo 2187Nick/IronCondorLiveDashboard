@@ -1,0 +1,9 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: condor-api-nodejs
+    src: ./
+    engine: nodejs16
+    primary: true
+    dev: nodemon index.js # start the micro in development mode
+    public: true # make the micro publicly accessibles

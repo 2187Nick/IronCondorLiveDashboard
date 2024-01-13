@@ -1,0 +1,107 @@
+
+<div class="condor-container">
+    <div class="wing left-wing">
+    <h3>Today's Trade 🚀</h3>
+    <h4>{{ data?.DATE }} &nbsp;&nbsp;&nbsp; Entry: {{ data?.ENTRY_TIME }} &nbsp;&nbsp;&nbsp; Exit: {{ data?.EXIT_TIME }}</h4>
+    <table class="wings-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Left Wing</th>
+            <th>Right Wing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Entry Credit</td>
+            <td>{{ data?.PUT_STRIKE0 }}P &#64; {{data?.PUT_STRIKE0_SELL}}</td>
+            <td>{{ data?.CALL_STRIKE0 }}C &#64; {{data?.CALL_STRIKE0_SELL}}</td>
+          </tr>
+          <tr>
+            <td>Entry Debit</td>
+            <td>{{ data?.PUT_STRIKE1 }}P &#64; {{data?.PUT_STRIKE1_BUY}}</td>
+            <td>{{ data?.CALL_STRIKE1 }}C &#64; {{data?.CALL_STRIKE1_BUY}}</td>
+          </tr>
+          <tr>
+            <td>Spread Credit</td>
+            <td>{{ data?.PUT_WING_CREDIT }}</td>
+            <td>{{ data?.CALL_WING_CREDIT }}</td>
+          </tr>
+          <tr>
+            <td>Total Credit</td>
+            <td></td>
+            <td>{{ data?.TOTAL_CREDIT }}</td>
+          </tr>
+          <tr>
+            <td>Stop Loss</td>
+            <td></td>
+            <td>{{ data?.STOP_LOSS }}</td>
+          </tr>
+          <tr>
+            <td>Exit Debit</td>
+            <td>{{ data?.PUT_STRIKE0 }}P &#64; {{data?.PUT_STRIKE0_CLOSE}}</td>
+            <td>{{ data?.CALL_STRIKE0 }}C &#64; {{data?.CALL_STRIKE0_CLOSE}}</td>
+          </tr>
+          <tr>
+            <td>Exit Credit</td>
+            <td>{{ data?.PUT_STRIKE1 }}P &#64; {{data?.PUT_STRIKE1_CLOSE}}</td>
+            <td>{{ data?.CALL_STRIKE1 }}C &#64; {{data?.CALL_STRIKE1_CLOSE}}</td>
+          </tr>
+          <tr>
+            <td>Total Debit</td>
+            <td></td>
+            <td>{{ data?.TOTAL_DEBIT_CLOSE }}</td>
+          </tr>
+          <tr>
+            <td>Profit * {{data?.CONTRACTS}}</td>
+            <td></td>
+            <td>{{ data?.TRADE_PROFIT }}</td>
+          </tr>
+          <!-- Other data elements -->
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="body">
+      <div class="head">
+        <!-- Graph for cumulative balance -->
+        <plotly-plot [data]="graph1?.data" [layout]="graph1?.layout"></plotly-plot>
+      </div>
+    </div>
+  
+    <div class="wing right-wing">
+        <h3>Strategy Stats</h3>
+        <table class="wings-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Daily Avg</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Best Trade</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Starting Balance</td>
+                <td>{{strat_data?.STARTING_BALANCE}}</td>
+              </tr>
+              <tr>
+                <td>Current Balance</td>
+                <td>{{ strat_data?.CURRENT_BALANCE }}</td>
+              </tr>
+              <tr>
+                <td>Profit</td>
+                <td>{{ strat_data?.TOTAL_PROFIT }}</td>
+              </tr>
+              <!-- Other data elements -->
+            </tbody>
+          </table>
+        </div>
+</div>
+  

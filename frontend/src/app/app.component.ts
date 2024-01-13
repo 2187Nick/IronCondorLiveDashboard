@@ -1,135 +1,75 @@
 import { Component } from '@angular/core';
 
-/* template: `
-<header>
-  <h1>Iron Condor Dashboard</h1>
-</header>
-<plotly-plot [data]="graph1.data" [layout]="graph1.layout"></plotly-plot>
-<plotly-plot [data]="graph2.data" [layout]="graph2.layout"></plotly-plot>
-<plotly-plot [data]="graph3.data" [layout]="graph3.layout"></plotly-plot>
-`, */
+import { StrategyComponent } from './component/strategy/strategy.component';
+import { DataService } from './services/data.service';
+
 
 @Component({
   selector: 'app-root',
-  template: `
-  <div class="app-container">
-    <header>
-      <h1>Iron Condor Dashboard</h1>
-    </header>
-    <div class="plot-container">
-      <plotly-plot [data]="graph1.data" [layout]="graph1.layout"></plotly-plot>
-      <plotly-plot [data]="graph2.data" [layout]="graph2.layout"></plotly-plot>
-      <plotly-plot [data]="graph3.data" [layout]="graph3.layout"></plotly-plot>
-    </div>
-    <footer>
-      <p>© 2024 2187.io</p>
-    </footer>
-  </div>
-  `,
-    styles: [`
-  .app-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  header {
-    color: white;
-    text-align: center;
-    width: 100%;
-  }
-  .plot-container {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    flex-grow: 1; /* This will make the plot container take up the remaining space */
-  }
-  footer {
-      color: white;
-      text-align: center;
-      width: 100%;
-      height: 40px; /* Adjust based on your footer's content */
-  }
-  `]
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public graph1 = {
-    data: [
-      { 
-        x: [1, 2, 3], 
-        y: [2, 6, 3], 
-        type: 'line', 
-        mode: 'lines+points', 
-        marker: {color: 'red'}, 
-        name: 'Line Plot0' // Add a name for the trace
-      },
-    ],
-    layout: {
-      paper_bgcolor: 'black',
-      plot_bgcolor: 'black',
-      font: {
-        color: 'orange'
-      },
-      width: 640, 
-      height: 480, 
-      title: '$10 Wide Strategy',
-      xaxis: {title: 'Date'}, // Add a label for the x axis
-      yaxis: {title: 'Profit $'}, // Add a label for the y axis
-      legend: {x: 1, y: 1} // Move the legend to the top right corner
-    }
-  };
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
 
-  public graph2 = {
-    data: [
-      { 
-        x: [1, 2, 3], 
-        y: [2, 6, 3], 
-        type: 'line', 
-        mode: 'lines+points', 
-        marker: {color: 'blue'}, 
-        name: 'Line Plot' // Add a name for the trace
-      },
-    ],
-    layout: {
-      paper_bgcolor: 'black',
-      plot_bgcolor: 'black',
-      font: {
-        color: 'green'
-      },
-      width: 640, 
-      height: 480, 
-      title: '$20 Wide Strategy',
-      xaxis: {title: 'Date'}, // Add a label for the x axis
-      yaxis: {title: 'Profit $'}, // Add a label for the y axis
-      legend: {x: 1, y: 1} // Move the legend to the top right corner
-    }
-  };
+  latestStrategyKey10: string | null = null;
+  latestStrategyKey20: string | null = null;
+  latestStrategyKey30: string | null = null;
 
-  public graph3 = {
-    data: [
-      { 
-        x: [1, 2, 3], 
-        y: [2, 5, 3], 
-        type: 'bar', 
-        marker: {color: 'orange'}, // Change the color of the bars
-        name: 'Bar Only Chart' // Add a name for the trace
-      },
-    ],
-    layout: {
-      paper_bgcolor: 'black',
-      plot_bgcolor: 'black',
-      font: {
-        color: 'blue'
-      },
-      width: 640, 
-      height: 480, 
-      title: '$30 Wide Strategy',
-      xaxis: {title: 'Date'}, // Add a label for the x axis
-      yaxis: {title: 'Profit $'}, // Add a label for the y axis
-      legend: {x: 1, y: 1} // Move the legend to the top right corner
+  currentDate = new Date();
+  formattedDate = this.getFormattedDate(this.currentDate);
+  
+  strategy1Key = 'condor_10_' + this.formattedDate;
+  strategy2Key = 'condor_20_' + this.formattedDate;
+  strategy3Key = 'condor_30_' + this.formattedDate;
+
+  stratDataKey1: string = '';
+  stratDataKey2: string = '';
+  stratDataKey3: string = '';
+
+  constructor(private dataService: DataService) {
+    this.fetchLatestStrategyKeys();
+  }
+
+  ngOnInit() {
+
+  }
+
+  fetchLatestStrategyKeys() {
+    this.dataService.getLatestStrategyKey("Strategy10").subscribe(key => {
+      this.latestStrategyKey10 = key;
+      this.stratDataKey1 = this.calculateStratDataKey("_10", this.latestStrategyKey10);
+    });
+
+    this.dataService.getLatestStrategyKey("Strategy20").subscribe(key => {
+      this.latestStrategyKey20 = key;
+      this.stratDataKey2 = this.calculateStratDataKey("_20", this.latestStrategyKey20);
+    });
+
+    this.dataService.getLatestStrategyKey("Strategy30").subscribe(key => {
+      this.latestStrategyKey30 = key;
+      this.stratDataKey3 = this.calculateStratDataKey("_30", this.latestStrategyKey30);
+    });
+  }
+
+  getFormattedDate(date: Date): string {
+    return `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${('0' + date.getDate()).slice(-2)}`;
+  }
+
+  calculateStratDataKey(suffix: string, latestKey: string | null): string {
+    const currentTime = new Date();
+    const estTime = new Date(currentTime.toLocaleString("en-US", {timeZone: "America/New_York"}));
+    const cutoffTime = new Date(estTime);
+    cutoffTime.setHours(16, 5, 0, 0); // Set to 4:05 PM EST
+
+    if (estTime <= cutoffTime && latestKey) {
+      // It's before 4:05 PM EST, use the latest key
+      return latestKey;
+    } else {
+       // It's after 4:05 PM EST, use today's date
+       return this.formattedDate + suffix;
     }
-  };
+  }
 }
-
