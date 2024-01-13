@@ -2,9 +2,11 @@
   <header>
     <h1>Iron Condor Dashboard</h1>
   </header>
-  <app-strategy [key]="strategy1Key"></app-strategy>
-  <app-strategy [key]="strategy2Key"></app-strategy>
-  <app-strategy [key]="strategy3Key"></app-strategy>
+
+  <app-strategy *ngIf="stratDataKey1" [key]="strategy1Key" [strat_key]="stratDataKey1"></app-strategy>
+  <app-strategy *ngIf="stratDataKey2" [key]="strategy2Key" [strat_key]="stratDataKey2"></app-strategy>
+  <app-strategy *ngIf="stratDataKey3" [key]="strategy3Key" [strat_key]="stratDataKey3"></app-strategy>
+
   <footer>
     <p>© 2024 2187.io</p>
   </footer>
